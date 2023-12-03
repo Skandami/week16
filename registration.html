@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/assets/normalize.css" />
+		<title>Registration Form</title>
+        <style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ color: black;
+  font-family:'Courier New', Courier, monospace;
+  font-weight:500;
+font-size: large;
+ line-height: 1;
+
+}
+body {
+    background:rgb(75, 95, 75);
+}
+.form{
+	 display: flex;
+  flex-direction: column;
+    width: 55%;
+    background:rgb(230, 84, 31);
+    border-color:dimgrey;
+    border-style:double;
+     padding: 2vh 3vw;
+     margin-left: 20%;
+	 align-items: center;
+
+}
+
+h1 {
+	
+  font-size: 2rem;
+  margin: 15px auto;
+  text-align: center;
+}
+div, p {
+  margin-left: 7em;
+       margin-right: 7em;
+    text-align: center;
+}
+p{
+    padding: 10px;
+}
+.errormessage {
+  color: whitesmoke;
+  font-weight: 400;
+}
+
+.submit {
+	background-color:green;
+	color:azure;
+	height: 40px;
+	border-radius: 6%;
+}
+input {
+	height: 30;
+}
+</style>
+	</head>
+	<body class="body">
+
+		<div id="registration" class="registration">
+			<h1>Форма регистрации</h1>
+			<form id="form" class="form" novalidate>
+				
+				<label for="firstname" id="firstname-label" class="label">Введите имя:</label>
+				<p class="errormessage" id="firstNameError"></p>
+				<input type="text" id="firstname" class="inputfield" pattern="^([a-zA-Zа-яА-Я]+-)?[a-zA-Zа-яА-Я]{2,20}$" minlength="2" maxlength="20" required placeholder="Юлия" />
+			<br/> 
+				<label for="email" id="email-label" class="label">введите email:</label>
+				<p class="errormessage" id="emailError"></p>
+				<input type="email" id="email" autocomplete="itgirl@mail.edu" class="inputfield" required placeholder="itgirl@mail.edu" />
+				<br/>
+           
+
+				<label for="age" id="age-label" class="label">введите возраст</label>
+				<p class="errormessage" id="ageError"></p>
+				<input type="number" id="age" min="18" max="130" step="1" class="inputfield" required placeholder="40" />
+				<br/>
+				
+				<div class="sex" id="sex">
+					<label class="label">Ваш пол:</label><br/>
+					<label class="radiolabel" for="sex__female"><input id="sex__female" type="radio" name="sex" value="female" class="radio" />женский</label>
+					<label class="radiolabel" for="sex__male"><input id="sex__male" type="radio" name="sex" value="male" class="radio"/>мужской</label>
+				</div><br/>
+				
+				
+					<label class="label">Ваша профессия:</label>
+					<p class="errormessage" id="jobError"></p>
+					<select id="job" class="job" required placeholder="Программист">
+						<option value="" id="job__empty">Выберите профессию</option>
+						<option value="Врач" id="job__doctor">Врач</option>
+						<option value="Программист" id="job__programmer">Программист</option>
+						<option value="Учитель" id="job__teacher">Учитель</option>
+						<option value="Дизайнер" id="job__designer">Дизайнер</option>
+						<option value="Инженер" id="job__engineer">Инженер</option>
+						<option value="Продавец" id="job__seller">Продавец</option>
+						<option value="Другое" id="job__other">Другое</option>
+					</select><br/> 
+			
+				
+				<label for="password" class="label">создайте пароль:</label>
+				<p class="errormessage" id="passwordError"></p>
+				<input type="password" id="password" class="inputfield" autocomplete="password" minlength="8" placeholder="пароль" required /><br/> 
+				<label for="password_repeat" class="label">повторите пароль:</label>
+				<p class="errormessage" id="passwordRepeatError"></p>
+				<input type="password" id="password_repeat" class="inputfield" autocomplete="password" minlength="8" placeholder="пароль" required /><br/> 
+				
+				<br/> <input type="submit" id="submit" class="submit" value="регистрация" />
+			<div id="message" class="errormessage"></div>	</div>
+		</div>	</form>
+		<script src="/form.js"></script>
+	</body>
+</html>
